@@ -48,6 +48,7 @@ public class AuthenticationService {
         var user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow();
         var jwtToken = jwtService.generateToken(user);
+        revokeAllUserTokens(user);
         saveUserToken(user, jwtToken);
         return AuthenticationResponse.builder().token(jwtToken).build();
     }
@@ -61,5 +62,16 @@ public class AuthenticationService {
                 .revoked(false)
                 .build();
         tokenRepository.save(token);
+    }
+
+    //user must have one valid token not multiple
+    private void revokeAllUserTokens(User user) {
+        var validUserTokens = tokenRepository.findAllValidTokensByUser(user.getId());
+        if (validUserTokens.isEmpty()) return;
+        validUserTokens.forEach(t -> {
+            t.setRevoked(true);
+            t.setExpired(true);
+        });
+        tokenRepository.saveAll(validUserTokens);
     }
 }
