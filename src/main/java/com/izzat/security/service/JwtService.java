@@ -1,4 +1,4 @@
-package com.izzat.security.config;
+package com.izzat.security.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

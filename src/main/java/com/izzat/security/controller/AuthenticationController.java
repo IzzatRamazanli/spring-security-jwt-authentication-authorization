@@ -1,5 +1,9 @@
-package com.izzat.security.auth;
+package com.izzat.security.controller;
 
+import com.izzat.security.service.AuthenticationService;
+import com.izzat.security.auth.req.AuthenticationRequest;
+import com.izzat.security.auth.req.RegisterRequest;
+import com.izzat.security.auth.resp.AuthenticationResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

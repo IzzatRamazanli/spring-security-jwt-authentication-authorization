@@ -1,6 +1,7 @@
-package com.izzat.security.config;
+package com.izzat.security.auth;
 
 
+import com.izzat.security.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

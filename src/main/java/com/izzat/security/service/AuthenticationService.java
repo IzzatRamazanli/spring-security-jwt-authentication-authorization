@@ -1,6 +1,8 @@
-package com.izzat.security.auth;
+package com.izzat.security.service;
 
-import com.izzat.security.config.JwtService;
+import com.izzat.security.auth.req.AuthenticationRequest;
+import com.izzat.security.auth.req.RegisterRequest;
+import com.izzat.security.auth.resp.AuthenticationResponse;
 import com.izzat.security.repository.UserRepository;
 import com.izzat.security.user.Role;
 import com.izzat.security.user.User;

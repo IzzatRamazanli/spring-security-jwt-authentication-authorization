@@ -1,4 +1,4 @@
-package com.izzat.security.auth;
+package com.izzat.security.auth.resp;
 
 import lombok.*;
 
